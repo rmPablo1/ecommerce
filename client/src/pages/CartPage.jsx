@@ -11,7 +11,7 @@ function CartPage() {
   useEffect(()=>{
 
     if(userInfo.token !== undefined){
-      fetch("http://localhost:8080/cart", {
+      fetch("https://backendshopmefy.onrender.com/cart", {
          headers: {
            "Authorization": "Bearer " + userInfo.token
          }
@@ -23,7 +23,7 @@ function CartPage() {
   }, [userInfo.token])
 
   const handlePayment = () => {
-    fetch("http://localhost:8080/checkout", {
+    fetch("https://backendshopmefy.onrender.com/checkout", {
       method:"POST",
       headers:{
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function CartPage() {
       console.log("error")
     }).then(({url}) => {
       window.open(url, '_blank').focus();
-      fetch("http://localhost:8080/order", {
+      fetch("https://backendshopmefy.onrender.com/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function CartPage() {
   }
 
   const handleClear = () => {
-    fetch("http://localhost:8080/clear-cart", {
+    fetch("https://backendshopmefy.onrender.com/clear-cart", {
       method: "POST",
       headers: {
         "Authorization": "Bearer "+ userInfo.token,

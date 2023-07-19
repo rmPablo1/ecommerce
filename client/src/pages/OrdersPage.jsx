@@ -9,7 +9,7 @@ function OrdersPage() {
   const {userInfo} = useContext(UserContext)
   useEffect(() => {
     if (userInfo.token !== undefined){
-      fetch("http://localhost:8080/orders", {
+      fetch("https://backendshopmefy.onrender.com/orders", {
         headers:{
           "Content-Type": "application/json",
           "Authorization": "Bearer " + userInfo.token

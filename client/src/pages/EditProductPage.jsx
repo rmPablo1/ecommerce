@@ -22,7 +22,7 @@ function EditProductPage() {
   const [isAllowed, setIsAllowed] = useState(false)
 
   useEffect(() => {
-    fetch(`http://localhost:8080/product/${prodId}`)
+    fetch(`https://backendshopmefy.onrender.com/product/${prodId}`)
     .then(res => res.json())
     .then(data => {
       const productInfo = data.product
@@ -80,7 +80,7 @@ function EditProductPage() {
     formData.append("price", newProduct.price)
     formData.append("category", newProduct.category)
 
-    fetch(`http://localhost:8080/edit/${prodId}`, {
+    fetch(`https://backendshopmefy.onrender.com/edit/${prodId}`, {
       method: "PATCH",
       headers:{
         "Authorization": "Bearer " + userInfo.token

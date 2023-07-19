@@ -10,14 +10,14 @@ function Provider({children}) {
 
   useEffect(() => {
     if(query !== ""){
-      fetch(`http://localhost:8080/categories/${query}/?search=${searchQuery}`)
+      fetch(`https://backendshopmefy.onrender.com/categories/${query}/?search=${searchQuery}`)
       .then(res => res.json())
       .then(data => {
         const productsFetched = data.products
         setProducts([...productsFetched])
       })
       } else {
-        fetch(`http://localhost:8080/?page=${page}&search=${searchQuery}`)
+        fetch(`https://backendshopmefy.onrender.com/?page=${page}&search=${searchQuery}`)
       .then(res => res.json())
       .then(data => {
         const productsFetched = data.products

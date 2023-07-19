@@ -45,7 +45,7 @@ function SignupPage() {
     event.preventDefault()
     if (errors.length === 0){
       setIsLoading(true)
-      fetch("http://localhost:8080/signup", {
+      fetch("https://backendshopmefy.onrender.com/signup", {
         method:"POST",
         headers: {
           "Content-Type": "application/json"

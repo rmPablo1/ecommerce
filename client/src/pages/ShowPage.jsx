@@ -28,7 +28,7 @@ function ShowPage() {
   }, [prodId])
   const handleClick = () => {
     setIsLoading(true)
-    fetch("http://localhost:8080/cart", {
+    fetch("https://backendshopmefy.onrender.com/cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ function ShowPage() {
     setQuantity(quantity + 1)
   }
   useEffect(() => {
-    fetch("http://localhost:8080/product/"+ prodId)
+    fetch("https://backendshopmefy.onrender.com/product/"+ prodId)
     .then(res => res.json())
     .then(data => {
       setProduct(data.product)
@@ -75,7 +75,7 @@ function ShowPage() {
 
         <div className="show-product">
           <div className="show-product-images-container">
-            {product.imageUrl ? <img src={`http://localhost:8080/${product.imageUrl}`}/> : <img src="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"/>}
+            {product.imageUrl ? <img src={`https://backendshopmefy.onrender.com/${product.imageUrl}`}/> : <img src="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"/>}
           </div>
           <div className="show-product-description">
             <div style={{marginBottom:"30px"}}>

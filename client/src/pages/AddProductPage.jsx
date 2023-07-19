@@ -61,7 +61,7 @@ function AddProductPage() {
       formData.append("price", newProduct.price)
       formData.append("category", newProduct.category)
 
-      fetch("http://localhost:8080/add-product", {
+      fetch("https://backendshopmefy.onrender.com/add-product", {
         method: "POST",
         headers:{
           "Authorization": "Bearer " + userInfo.token

@@ -27,7 +27,7 @@ function LoginPage() {
   const handleSubmit = (event) => {
     event.preventDefault()
     setIsLoading(true)
-    fetch("http://localhost:8080/login", {
+    fetch("https://backendshopmefy.onrender.com/login", {
       method:"POST",
       headers: {
         "Content-Type": "application/json"

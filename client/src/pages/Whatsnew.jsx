@@ -6,7 +6,7 @@ import ProductShow from "../components/ProductShow"
 function Whatsnew() {
   const [products, setProducts] = useState([])
   useEffect(()=> {
-    fetch("http://localhost:8080/whatsnew")
+    fetch("https://backendshopmefy.onrender.com/whatsnew")
     .then(res => res.json())
     .then(data => {
       setProducts(data.products)
